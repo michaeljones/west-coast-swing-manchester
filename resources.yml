@@ -1,8 +1,24 @@
 
-videos:
-  - dancers:
-      - Emeline Rochefeuille
-      - Thibault Ramirez
-    link:
-      type: youtube
-      id: liwurdWzEgw
+scenes:
+  - name: Swing Rengades
+    location: Leeds
+    website: https://www.swingrenegades.co.uk/
+  - name: Bristol City Swing
+    location: Bristol
+    website: https://bristolcityswing.com/
+
+professionals:
+  - name: Jakub Jakoubek & Emeline Rochefeuille
+    youtube:
+      name: EmelineRochefeuille
+      url: https://www.youtube.com/@EmelineRochefeuille
+    website: https://www.jemwcs.com
+
+songs:
+  - title: 16 count intro with beats
+    songs:
+      - name: Breathe
+        artist: Olly Alexander
+        url: https://open.spotify.com/track/267nfLfaSSDa9ivHncHynh?si=53e389f09cd04517
+
+
