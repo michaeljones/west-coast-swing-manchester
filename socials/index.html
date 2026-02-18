@@ -1,0 +1,186 @@
+
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+
+  <script src="https://cdn.jsdelivr.net/npm/date-fns@4.1.0/cdn.min.js"></script>
+
+  <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
+  <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
+  <!-- <link rel="apple-touch-icon" href="icon.png"> -->
+
+  <!-- <link rel="manifest" href="site.webmanifest"> -->
+  <!-- <meta name="theme-color" content="#fafafa"> -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    p {
+      margin: 10px 0;
+      padding: 0;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+
+      & > div {
+        width: 800px;
+      }
+    }
+
+    .my-1 {
+      margin: 10px 0;
+    }
+
+    .block {
+      margin: 25px 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    #instagram {
+      display: flex;
+      flex-direction: column;
+
+      width: 720px;
+      height: 1280px;
+
+      font-size: 35px;
+
+      padding: 40px;
+
+      background-image: url("./images/instagram-background.jpeg");
+
+      & p {
+        line-height: 3.5rem;
+      }
+    }
+
+    #instagram-border {
+      border: 1px solid black;
+    }
+
+    .section {
+      border: 1px solid black;
+      padding: 38px;
+    }
+
+    .section + .section {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <div class="section">
+      <h2>Instagram</h2>
+      <div id="instagram-border">
+        <div id="instagram">
+          <div class="block">
+            <p>
+              Join us on
+            </p>
+            <p>
+              <b id="date-insta">- placeholder -</b>
+            </p>
+            <p class="my-1">
+              for lessons and a social party.
+            </p>
+          </div>
+
+          <div class="block">
+            <p>
+            📍Location<br> <b>Tib Street Studio</b><br> 72 Tib Street<br> Northern Quarter<br> Manchester, M4 1LG
+            </p>
+          </div>
+
+          <div class="block">
+            <p>
+              7:05 - 7:45pm - Intermediate<br/>
+              7:50 - 8:30pm - Beginners<br/>
+              8:35 - 9:15pm - Improvers<br/>
+              9:15 - 11:00pm - Social dancing!<br/>
+            </p>
+          </div>
+
+          <div class="block">
+            <p>
+              Come at 7:45pm for beginner's if you're new!<br/><br/>
+              See you soon!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Facebook</h2>
+      <p>This <b id="date-fb">- placeholder -</b>, we are at our regular venue Tib St Studio - 72 Tib Street, right in the heart of Manchester’s Northern Quarter.</p>
+
+      <p>Here’s what the evening will look like:</p>
+
+      <ul>
+          <li>7:05 - 7:45pm: Intermediate (Level 3)</li>
+          <li>7:50 - 8:30pm: Beginners (Level 1)</li>
+          <li>8:35 - 9:15pm: Improvers (Level 2)</li>
+          <li>9:15 - 11:00pm: Social dancing</li>
+      </ul>
+
+      <p>If you’re just starting out with West Coast Swing we’d recommend arriving at 7:45pm in time for the beginners class — it’s a great way to ease in.</p>
+
+      <p>If you're feeling confident with your fundamentals, you're very welcome to join us from 8:30pm for the improvers session.</p>
+
+      <p>If you're already dancing at a more experienced level and aren't quite sure which class would suit you best, feel free to send us a message so we can tell you more.</p>
+
+      <p>And finally, this week’s dancers are</p>
+    </div>
+
+    <div class="section">
+      <h2>WhatsApp</h2>
+      <p>This <b id="date-whatsapp">- placeholder -</b>, we are at our regular venue Tib St Studio - 72 Tib Street, in the Northern Quarter - https://maps.app.goo.gl/LHkv5cFfCw9UjJWQ7 - use the buzzer labelled 'Tib St Studio' on the left hand side of the door and come up to the first floor!</p>
+
+      <p>Here’s what the evening will look like:</p>
+
+      <ul>
+          <li>7:05 - 7:45pm: Intermediate (Level 3)</li>
+          <li>7:50 - 8:30pm: Beginners (Level 1)</li>
+          <li>8:35 - 9:15pm: Improvers (Level 2)</li>
+          <li>9:15 - 11:00pm: Social dancing</li>
+      </ul>
+
+      <p>It is £10 for the evening and there is an introductory offer of £20 for four evenings. Beyond the starter offer you can pay £35 for four evenings. Looking forward to seeing everyone there :) Message an organiser or reply below if you have any questions :)</p>
+    </div>
+
+  </main>
+
+  <script>
+    const now = new Date();
+    if (dateFns.isFriday(now)) {
+      document.getElementById('date-insta').textContent = dateFns.format(now, "iiii do MMMM");
+      document.getElementById('date-fb').textContent = dateFns.format(now, "iiii, do MMMM");
+      document.getElementById('date-whatsapp').textContent = dateFns.format(now, "iiii, do MMMM");
+    } else {
+      const nextFriday = dateFns.nextFriday(now);
+
+      document.getElementById('date-insta').textContent = dateFns.format(nextFriday, "iiii do MMMM");
+      document.getElementById('date-fb').textContent = dateFns.format(nextFriday, "iiii, do MMMM");
+      document.getElementById('date-whatsapp').textContent = dateFns.format(nextFriday, "iiii, do MMMM");
+    }
+  </script>
+
+</body>
+
+</html>
