@@ -145,6 +145,8 @@
 
       <p>If you're already dancing at a more experienced level and aren't quite sure which class would suit you best, feel free to send us a message so we can tell you more.</p>
 
+      <p data-until="2026-04-24"><strong>Reminder:</strong> Due to the Manchester Detonation Dance event, we will not be running our regular Friday evening on Friday 24th April.</p>
+
       <p>And finally, this week’s dancers are</p>
     </div>
 
@@ -162,6 +164,8 @@
       </ul>
 
       <p>It is £10 for the evening and there is an introductory offer of £20 for four evenings. Beyond the starter offer you can pay £35 for four evenings. Looking forward to seeing everyone there :) Message an organiser or reply below if you have any questions :)</p>
+
+      <p data-until="2026-04-24"><strong>Reminder:</strong> Due to the Manchester Detonation Dance event, we will not be running our regular Friday evening on Friday 24th April.</p>
     </div>
 
   </main>
@@ -178,6 +182,14 @@
       document.getElementById('date-insta').textContent = dateFns.format(nextFriday, "iiii do MMMM");
       document.getElementById('date-fb').textContent = dateFns.format(nextFriday, "iiii, do MMMM");
       document.getElementById('date-whatsapp').textContent = dateFns.format(nextFriday, "iiii, do MMMM");
+    }
+
+    let untilNodes = document.querySelectorAll("[data-until]");
+    for (let node of untilNodes) {
+      let until = dateFns.parseISO(node.dataset.until);
+      if (now > until) {
+        node.style.display = "none";
+      }
     }
   </script>
 
